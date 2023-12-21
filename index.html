@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web comersial</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- link font goggle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@400;600;700;800&family=Young+Serif&display=swap" rel="stylesheet">
+    <!-- link feather icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>HELLO WORLD</h2>
+        </div>
+        <ul class="menu">
+            <li><a href="'#">Home</a></li>
+            <li><a href="'#">About</a></li>
+            <li><a href="'#">Profil</a></li>
+        </ul>
+    
+        <div class="hamburger">
+            <a href=""> <i data-feather="menu"  class="hamburger-menu"></i></a>
+            <a href="" class="x"> <i data-feather="x"></i></a>
+        </div>
+    </nav>
+    
+  <figure class="hero">
+
+        <div class="hero-text">
+                <h3>Welcome to my website</h3>
+                <h1>Saya seorang <span></span></h1>
+            <div class="hero-content">
+                <p>Mari kita berkenalan lebih lanjut </p>
+            </div>
+        </div>
+
+        <div class="hero-btn">
+            <a href="../website-kedua/index.html" target="_blank" class="btn-green-2">Get in > </a>
+            <a href="#">About us</a>
+        </div>
+   </figure>
+
+
+   <section class="about">
+    <div class="about-content">
+            <h1>Abdiaksa aural zadly</h1>
+            <h3>Front-end developer</h3>
+            <p>Aku adalah seorang mahasiswa manajemen STIE yang salah jurusan tapi minat ku di web developer wkwkwkwkwk </p>
+    </div>
+    <div class="proggres">
+        <div class="skill-box">
+            <span class="title">HTML</span>
+            <div class="skill-bar">
+                <span class="skill-per html">
+                    <div class="tooltip">90%</div>
+                </span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <span class="title">CSS</span>
+            <div class="skill-bar">
+                <span class="skill-per css">
+                    <div class="tooltip">85%</div>
+                </span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <span class="title">JAVASCRIPT</span>
+            <div class="skill-bar">
+                <span class="skill-per javascript">
+                    <div class="tooltip">80%</div>
+                </span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <span class="title">TAILWIND</span>
+            <div class="skill-bar">
+                <span class="skill-per tailwind">
+                    <div class="tooltip">70%</div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+   </section>
+
+   <blockquote>
+    <div class="quote">
+        <q>beberapa hal positif lain nya bahwa bukan salah jurusan bukan berarti kamu gagal, melainkan ada hikmah di balik semua itu bahwa allah punya rencana yang lebih untuk hamba nya</q>
+    </div>
+
+    <h4>aksa</h4>
+   </blockquote>
+   <footer>
+    <div class="footer-content">
+        <div class="header-footer">
+            <h2>My website </h2>
+            <h3>Abdiaksa aural zadly</h3>
+        </div>
+        <div class="footer-footer">
+            <p>Copyright by <span>Abdiaksa aural zadly</span></p>
+        </div>
+    </div>
+   </footer>
+
+
+
+
+    <script>
+        feather.replace();
+    </script>
+    <script defer>
+
+        // const hamburgerMenu = document.getElementById('hamburger-menu');
+        // Ganti document.getElementById('#hamburger-menu') menjadi document.getElementById('hamburger-menu'). Anda tidak perlu menggunakan tanda "#" saat menggunakan getElementById, cukup gunakan ID langsung.
+
+        const hamburger = document.querySelector('.hamburger')
+        const hamburgerMenu = document.querySelector('.hamburger-menu')
+        const xMenu = document.querySelector('.x')
+        const menu = document.querySelector('.menu')
+
+        hamburgerMenu.addEventListener('click', function(e){
+            menu.classList.toggle('showmenu')
+            // prevent default karena dia dalam tag a terdapat href yang tidak mengarah ke apapun contoh href: ''
+            e.preventDefault() 
+        })
+
+
+
+        // cara membuat scroll navbar sticky
+        window.addEventListener('scroll', function (){
+            var navbar = document.querySelector('.navbar')
+            navbar.classList.toggle('sticky', window.scrollY > 40);
+
+            var cekScroll = window.scrollY;
+            console.log (`nilai scroll di bawah adalah ${cekScroll}`)
+        })
+
+
+
+        // !!! CARA BUAT TYPING TEKS VANILLA JAVASCRIPT (FULL BINGUNG COYYY)
+
+        let wordIndex = 0;
+        let charIndex = 1;
+        let itsDelete = false;
+        let dynamicText = document.querySelector('.hero-text h1 span');
+
+        // buatkan array untuk typing teks nya 
+        const words = ['Mahasiswa', 'Programming', 'Manusia', 'Front-end developer', 'Web developer']
+        // buat function untuk typing text nya
+        const typeEffect = function () {
+            // buat var untuk mengambil data array di words dengan index tertentu (lihat index nya di wordIndex)
+            const currentWord = words[wordIndex];
+            // buat var untuk mengambil hasil data array dan gunakan method "substring" untuk menghitung kata perkata dari var currentWord 
+            const currentChar = currentWord.substring(0, charIndex);
+            // console.log(currentWord, currentChar);
+            dynamicText.textContent = currentChar;
+            dynamicText.classList.add('stop-blink')
+            // jika kondisi nya true, maka lanjutkan tulisan teks KATA satu persatu
+            if(!itsDelete && charIndex < currentWord.length){
+                charIndex++;
+                setTimeout(typeEffect , 200)
+            // jika kondisi nya true, makan hapus setelah text tersebut satu persatu
+            }else if(itsDelete && charIndex > 0){
+                charIndex--;
+                setTimeout(typeEffect, 100)
+
+            // JIKA TEKS NYA SUDAH DI HAPUS, MAKA LANJUT KE TEKS SELANJUTNYA DI INDEX ARRAY TERSEBUT
+            }else{
+                itsDelete = !itsDelete;
+                dynamicText.classList.remove('stop-blink')
+                wordIndex = !itsDelete ? (wordIndex + 1) % words.length : wordIndex;
+                setTimeout(typeEffect, 1000)
+            }
+
+            console.log( currentWord, currentChar)
+        }
+
+        typeEffect();
+
+
+    </script>
+</body>
+</html>
