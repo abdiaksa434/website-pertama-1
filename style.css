@@ -61,7 +61,7 @@ body{
 }
 
 .navbar.sticky{
-    padding: .8rem 7%;
+    padding: 1.7rem 7%;
     background: var(--bg-4);
 }
 
@@ -72,8 +72,8 @@ body{
 
 .hamburger{
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    right: 0;
+    top: 1.7rem;
     padding-top: .2rem;
     display: flex;
 }
@@ -112,6 +112,17 @@ body{
     /* text-align: center; */
 }
 
+.hero-text h3{
+    font-size: 1.8rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+}
 .hero .hero-text h1 span{
     color: var(--bg-6);
     position: relative;
@@ -150,6 +161,9 @@ body{
     text-align: center;
 }
 
+.hero-btn a{
+    font-size: 1.2rem;
+}
 .hero .hero-btn a:hover:first-child{
     background-color: var(--bg-3);
 }
@@ -162,6 +176,9 @@ body{
     color: var(--bg-6);
 }
 
+.about-content {
+    font-size: 1.2rem;
+}
 
 
 blockquote{
@@ -198,6 +215,11 @@ blockquote .quote::before{
     opacity: 0.5;
     display: block; 
 } 
+
+.quote q,
+.quote h4{
+    font-size: 1.2rem;
+}
 
 
 
@@ -348,6 +370,7 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .footer-content .header-footer{
@@ -411,10 +434,12 @@ footer {
     }
     .navbar{
         position: fixed;
+        justify-content: space-between;
+        align-items: center;
     }
     .menu{
         position: absolute;
-        top: 0;
+        top: 2.8rem;
         right: 0;
         z-index: 1;
         flex-direction: column;
@@ -428,8 +453,11 @@ footer {
         backdrop-filter: blur(1px);
         border-radius: 10px;
     }
+    .logo{
+        font-size: 1.5rem;
+    }
     .navbar .menu li a{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: var(--bg-1);
     }
     .menu li{
@@ -438,7 +466,7 @@ footer {
 
     .hamburger .hamburger-menu{
         display: block;
-        width: 20px;
+        width: 70px;
         z-index: 100;
     }
     
